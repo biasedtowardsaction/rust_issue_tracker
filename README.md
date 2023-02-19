@@ -1,6 +1,8 @@
 # A simple minimal in memory storage issue tracker api made in rust.
 ## Crates used
 * [Actix web](https://actix.rs/)
+* [Serde](https://serde.rs/)
+* [Uuid](https://docs.rs/uuid/latest/uuid/)
 
 ## Goal of the project 
 * Better understand rust language with a hands-on approach
