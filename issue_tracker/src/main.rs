@@ -59,8 +59,8 @@ async fn main() -> std::io::Result<()> {
 
     HttpServer::new(move || {
         let cors = Cors::default()
-            .allowed_origin("http://localhost:3000")
-            .allowed_origin("http://localhost:3000/")
+            .allowed_origin("http://localhost:8000")
+            .allowed_origin("http://localhost:8000/")
             .supports_credentials();
         App::new()
             .app_data(app_data.clone())
