@@ -4,7 +4,7 @@ use actix_cors::Cors;
 use actix_web::http::header::ContentType;
 use actix_web::middleware::Logger;
 use actix_web::{get, web, App, HttpResponse, HttpServer, Responder};
-use chrono::prelude::*;
+use chrono::prelude::Utc;
 use serde::Serialize;
 use std::sync::Mutex;
 use uuid::Uuid;

@@ -1,7 +1,7 @@
 use actix_web::body::BoxBody;
 use actix_web::http::header::ContentType;
 use actix_web::{HttpRequest, HttpResponse, Responder};
-use chrono::prelude::*;
+use chrono::prelude::{DateTime,Utc};
 use serde::{Deserialize, Serialize};
 use std::sync::Mutex;
 
