@@ -35,7 +35,19 @@ async fn get_issues_handler(data: web::Data<IssuesState>) -> impl Responder {
         .content_type(ContentType::json())
         .body(response)
 }
-
+#[get("/issues/{issue_id}")]
+async fn get_issue_by_id_handler(data: web::Data<IssuesState>, issue_id: String) -> impl Responder {
+    let issue = data.issues.lock().unwrap();
+    if let Some(issue) = issue.iter().find(|&item| item.issue_id == issue_id) {
+        // Issue is found
+        HttpResponse::Ok()
+            .content_type(ContentType::json())
+            .json(issue)
+    } else{
+        //The issue does not exist
+        HttpResponse::NotFound().body("Issue not found!")
+    }
+}
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
     if std::env::var_os("ISSUE_LOGGER").is_none() {
