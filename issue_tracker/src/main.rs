@@ -78,6 +78,7 @@ async fn main() -> std::io::Result<()> {
             .app_data(app_data.clone())
             .service(health_check_handler)
             .service(get_issues_handler)
+            .service(get_issue_by_id_handler)
             .wrap(cors)
             .wrap(Logger::default())
     })
